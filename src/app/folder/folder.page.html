@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+    <ion-button slot="end" (click)="openForm()">Add</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<!-- check user list is empty or not -->
+  <div *ngIf="list">
+    <!-- set list data  -->
+    <ion-list *ngFor="let item of list">
+      <ion-item lines="none">
+        <ion-label>
+          <h3>{{item.name}}</h3>
+          <h3>{{item.lastName}}</h3>
+          <h3>{{item.number}}</h3>
+          <p>{{item.description}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div> 
+  <div *ngIf="!list">
+    <!-- list is empty -->
+    <p style="text-align: center;padding-top: 30px;"> Nodata Found</p>
+  </div>
+
+  
+</ion-content>

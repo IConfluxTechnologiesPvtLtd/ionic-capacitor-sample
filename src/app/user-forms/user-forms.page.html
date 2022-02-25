@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add User</ion-title>
+  </ion-toolbar>
+</ion-header>
+  <!-- Add user data form , First Name is required -->
+  <ion-content class="container" >
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <ion-item  class="form-group" lines="full">
+        <ion-label position="floating">First name</ion-label>
+        <ion-input type="text"  [(ngModel)]="name" name="name"required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating" >Last name</ion-label>
+        <ion-input type="text" [(ngModel)]="lastName" name="lastName" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating" >Contact Number</ion-label>
+        <ion-input type="number" [(ngModel)]="number" name="number"required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating" >Description</ion-label>
+        <ion-input type="text" [(ngModel)]="description" name="description" required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col class="col-md-6 col-lg-6">
+          <ion-button type="submit" color="danger" (click)="gotoBack()" expand="block">Cancle</ion-button>
+        </ion-col>
+        <ion-col class="col-md-6 col-lg-6">
+          <ion-button type="submit" color="danger" (click)="setData()" expand="block">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+   
+
+</ion-content>
